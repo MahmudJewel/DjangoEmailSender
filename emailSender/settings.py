@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # installed app 
     'second',
+
+    # Third party app 
+    'captcha',
 ]
 
 MIDDLEWARE = [
