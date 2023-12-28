@@ -14,7 +14,7 @@ from pathlib import Path
 from decouple import config
 
 E_MAIL = config("E_MAIL")
-PASS = config("PASS")
+PASS = config("PASS_2")
 # print('==========> email, pass==> ', E_MAIL, PASS)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

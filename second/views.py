@@ -7,6 +7,7 @@ from django.conf import settings
 # Create your views here.
 
 def home(request):
+	form = ContactForm()
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
 		if form.is_valid():
@@ -21,9 +22,11 @@ def home(request):
 			print('subject: ==> ', subject[0])
 			print('Body: ==> ', type(message))
 			try:
-				send_mail(subject[0], message, body['from_mail'], [toMail]) 
+				send_mail(subject[0], message, body['from_mail'], [toMail])
+				form = ContactForm()
+				print('Mail sent ====> ') 
+				return redirect ("success_mail")
 			except BadHeaderError:
+				print('Error ====> ',BadHeaderError)
 				return HttpResponse('Invalid header found.')
-			return redirect ("home")
-	form = ContactForm()
 	return render(request, 'index.html', {'form':form})
