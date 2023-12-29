@@ -4,14 +4,11 @@
 '*********************** Date: 20-07-2021 ***********************************'
 '********* Title: Making complete portfolio with Django *********************'
 -->
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
+{% load widget_tweaks %}
+{% block content %}
 
-<head>
-
-</head>
-
-<body>
 	<!--===================== start  contact   =========================-->
 	<section id="contactid" style="display: flex ; justify-content: center;">
 		<div>
@@ -35,6 +32,4 @@
 	<div>
 
 	</div>
-</body>
-
-</html>
+{% endblock %}
